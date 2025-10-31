@@ -102,6 +102,9 @@ class SSH
             if (! $login) {
                 throw new SSHAuthenticationError('Error authenticating');
             }
+
+            $this->connection->setTimeout(7200);
+            $this->connection->setKeepAlive(60);
         } catch (Throwable $e) {
             Log::error('Error connecting', [
                 'msg' => $e->getMessage(),

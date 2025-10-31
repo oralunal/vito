@@ -248,7 +248,7 @@ abstract class AbstractDatabase extends AbstractService implements Database
         $this->service->server->ssh()->exec(
             view($this->getScriptView('restore'), [
                 'database' => $database,
-                'file' => rtrim($backupFile->tempPath(), '.zip'),
+                'file' => rtrim($backupFile->tempPath(), '.gz'),
             ]),
             'restore-database'
         );

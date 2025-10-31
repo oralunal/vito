@@ -131,7 +131,7 @@ class BackupFile extends AbstractModel
     private function getBackupExtension(): string
     {
         if ($this->backup->type === BackupType::DATABASE) {
-            return '.zip';
+            return '.gz';
         }
 
         return '.tar.gz';
